@@ -6,6 +6,16 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          metadata-complete="false">
 
+
+<servlet>
+   <servlet-name>GmailAction</servlet-name>
+   <servlet-class>org.f1team.communications.GoogleMail</servlet-class>
+</servlet>
+
+<servlet-mapping>
+   <servlet-name>GmailAction</servlet-name>
+   <url-pattern>/EmailAction</url-pattern>
+</servlet-mapping>
          
 </web-app>
 
