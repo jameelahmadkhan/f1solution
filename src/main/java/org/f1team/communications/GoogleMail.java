@@ -66,9 +66,8 @@ public class GoogleMail extends HttpServlet {
 			message.setFrom(new InternetAddress("jameel.nice@gmail.com"));
 			message.setRecipients(Message.RecipientType.TO,
 				InternetAddress.parse("jameel.nice@gmail.com"));
-			message.setSubject("Testing Subject");
-			message.setText("Dear Mail Crawler,"
-				+ "\n\n No spam to my email, please!");
+			message.setSubject(request.getParameter("fullname")+" || "+request.getParameter("email"));
+			message.setText(request.getParameter("message"));
 
 			Transport.send(message);
 
