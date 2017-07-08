@@ -2,8 +2,10 @@ package org.f1team.communications;
 
 
 import java.io.*;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
+
 import com.sun.mail.smtp.SMTPTransport;
 
 import java.security.Security;
@@ -18,6 +20,7 @@ import javax.mail.Session;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
 
 /**
  *
@@ -72,6 +75,15 @@ public class GoogleMail extends HttpServlet {
 			Transport.send(message);
 
 			System.out.println("Done");
+			PrintWriter out = response.getWriter();
+			out.println("<H4>Done <H4>");
+			try {
+				wait(20);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			response.sendRedirect("index.html");
 
 		} catch (MessagingException e) {
 			throw new RuntimeException(e);
