@@ -79,6 +79,7 @@ public class GoogleMail extends HttpServlet {
 
 			System.out.println("Done");
 			PrintWriter out = response.getWriter();
+			response.setContentType("text/html");
 			out.print("<h4> Thank you for your email </h4>");
 			RequestDispatcher rd = request.getRequestDispatcher("/index.html");
 			rd.include(request, response);
