@@ -79,17 +79,12 @@ public class GoogleMail extends HttpServlet {
 
 			System.out.println("Done");
 			PrintWriter out = response.getWriter();
-			out.print("<html><head>");
-			out.print("<script type=\"text/javascript\">alert(" + "Thank you for your email " + ");</script>");
-			out.print("</head><body>Thanks</body></html>");
-			 request.wait();
-			 response.sendRedirect("index.html");
-
+			out.print("<h4> Thank you for your email </h4>");
+			RequestDispatcher rd = request.getRequestDispatcher("/index.html");
+			rd.include(request, response);
+			
 		} catch (MessagingException e) {
 			throw new RuntimeException(e);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 	}
 }
