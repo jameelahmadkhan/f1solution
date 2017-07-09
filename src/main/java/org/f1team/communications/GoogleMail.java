@@ -80,7 +80,11 @@ public class GoogleMail extends HttpServlet {
 			System.out.println("Done");
 			PrintWriter out = response.getWriter();
 			response.setContentType("text/html");
-			out.print("<h4> Thank you for your email </h4>");
+			//out.print("<h4> Thank you for your email </h4>");
+			out.print("<div class=\"alert success\">"+
+			  "<span class=\"closebtn\">&times;</span>"  +
+			  "<strong>Success!</strong> Indicates a successful or positive action."+
+			"</div>");
 			RequestDispatcher rd = request.getRequestDispatcher("/index.html");
 			rd.include(request, response);
 			
