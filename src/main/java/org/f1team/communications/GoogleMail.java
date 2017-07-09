@@ -77,12 +77,7 @@ public class GoogleMail extends HttpServlet {
 			System.out.println("Done");
 			PrintWriter out = response.getWriter();
 			out.println("<H4>Done <H4>");
-			try {
-				wait(20);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
 			response.sendRedirect("index.html");
 
 		} catch (MessagingException e) {
