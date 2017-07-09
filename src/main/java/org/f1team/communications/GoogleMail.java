@@ -23,6 +23,8 @@ import javax.mail.internet.MimeMessage;
 
 
 
+
+
 /**
  *
  * @author doraemon
@@ -67,9 +69,9 @@ public class GoogleMail extends HttpServlet {
 		try {
 
 			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress("jameel.nice@gmail.com"));
+			message.setFrom(new InternetAddress("f1teamforsolutions@gmail.com"));
 			message.setRecipients(Message.RecipientType.TO,
-				InternetAddress.parse("jameel.nice@gmail.com"));
+				InternetAddress.parse("f1teamforsolutions@gmail.com"));
 			message.setSubject(request.getParameter("fullname")+" || "+request.getParameter("email"));
 			message.setText(request.getParameter("message"));
 
@@ -78,12 +80,16 @@ public class GoogleMail extends HttpServlet {
 			System.out.println("Done");
 			PrintWriter out = response.getWriter();
 			out.print("<html><head>");
-			out.print("<script type=\"text/javascript\">alert(<h2>" + "Thank you for your email </h2>" + ");</script>");
-			out.print("</head><body></body></html>");
-			response.sendRedirect("index.html");
+			out.print("<script type=\"text/javascript\">alert(" + "Thank you for your email " + ");</script>");
+			out.print("</head><body>Thanks</body></html>");
+			 request.wait();
+			 response.sendRedirect("index.html");
 
 		} catch (MessagingException e) {
 			throw new RuntimeException(e);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }
