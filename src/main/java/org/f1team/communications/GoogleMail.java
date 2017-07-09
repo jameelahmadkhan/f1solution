@@ -27,7 +27,7 @@ import javax.mail.internet.MimeMessage;
 
 /**
  *
- * @author doraemon
+ * @author jameel
  */
 import java.util.Properties;
 
