@@ -79,13 +79,7 @@ public class GoogleMail extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			out.println("<div class=\"alert\">" +
  " <span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span>Thank You For Your Mail.</div>");
-			try {
-				this.wait(100);
-				this.notifyAll();			
-				} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
 			response.sendRedirect("index.html");
 
 		} catch (MessagingException e) {
