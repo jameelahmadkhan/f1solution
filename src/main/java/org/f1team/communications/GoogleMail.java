@@ -81,11 +81,8 @@ public class GoogleMail extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			response.setContentType("text/html");
 			//out.print("<h4> Thank you for your email </h4>");
-			out.print("<div class=\"alert success\">"+
-			  "<span class=\"closebtn\">&times;</span>"  +
-			  "<strong>Success!</strong> Indicates a successful or positive action."+
-			"</div>");
-			RequestDispatcher rd = request.getRequestDispatcher("/index.html");
+			
+			RequestDispatcher rd = request.getRequestDispatcher("/popupmsg.html");
 			rd.include(request, response);
 			
 		} catch (MessagingException e) {
